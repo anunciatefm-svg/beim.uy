@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --teal: #2a9d8f;
+  --teal-light: #3bbdad;
+  --teal-dark: #1f7a6e;
+  --bg-light: #e8f7f6;
+  --dark: #1a2332;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #1a2332;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-card1 { animation: floatCard1 6s ease-in-out infinite 0.5s; }
+.animate-float-card2 { animation: floatCard2 6s ease-in-out infinite 1s; }
+.animate-fade-slide-up { animation: fadeSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+.animate-fade-in { animation: fadeIn 0.3s ease forwards; }
+.animate-modal-in { animation: modalIn 0.25s cubic-bezier(0.16,1,0.3,1) forwards; }
